@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">test</string>
+
+    <string name="fa_regular_chevron">&#xf054;</string>
+    <string name="fa_regular_search">&#xf002;</string>
+    <string name="structure">ساختار درختی</string>
+
+</resources>

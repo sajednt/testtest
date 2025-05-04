@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <color name="Neutral_light">#F0F1F5</color>
+    <color name="Brand">#774C9E</color>
+
+    <color name="grad1">#712EFF</color>
+    <color name="grad2">#4C2094</color>
+
+    <color name="grayAD">#eeeeee</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="texts">#F0F1F5</color>
+    <color name="primary_text">#2E3444</color>
+
+
+</resources>
