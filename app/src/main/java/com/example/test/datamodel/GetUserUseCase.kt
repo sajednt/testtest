@@ -52,6 +52,7 @@ class GetUserUseCase {
                 username = username,
                 firstName = firstName,
                 lastName = lastName,
+                isSelected = false,
                 rank = Random.nextInt(0, 6),
                 team = List(Random.nextInt(0, 10)) { subIndex ->
                     Member(
@@ -60,6 +61,7 @@ class GetUserUseCase {
                         firstName = firstNames.random(),
                         lastName = lastNames.random(),
                         rank = Random.nextInt(0, 6),
+                        isSelected = false,
                         team = if (indentLevel < 4) {
                             generateMockMembers(
                                 Random.nextInt(0, 6),

@@ -6,8 +6,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
 
         <TextView
             android:id="@+id/textCounter"
@@ -17,8 +17,10 @@
             android:backgroundTint="#DDDDDD"
             android:gravity="center"
             android:text="1"
+            android:fontFamily="@font/yekanbakh_fanum_regular"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="12sp"
+            android:layout_marginRight="10dp"
             app:layout_constraintDimensionRatio="W,1:1"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="#DDDDDD"
+            android:layout_marginLeft="10dp"
             app:layout_constraintBottom_toBottomOf="@id/textCounter"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/textCounter"
@@ -36,13 +39,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerItems"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layoutDirection="rtl"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textCounter"
-            tools:itemCount="10"
-            tools:listitem="@layout/list_item_member" />
+            android:paddingHorizontal="10dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/textCounter" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

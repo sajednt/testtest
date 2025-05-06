@@ -6,5 +6,6 @@ data class Member(
     val firstName: String,
     val lastName: String,
     val rank: Int,
+    var isSelected: Boolean,
     val team: List<Member> = emptyList(),
 )

@@ -9,6 +9,7 @@
         <variable
             name="member"
             type="com.example.test.datamodel.Member" />
+        <import type="androidx.core.content.ContextCompat" />
 
 
     </data>
@@ -22,13 +23,24 @@
         android:clipToOutline="true"
         android:clipToPadding="true">
 
+        <View
+            android:id="@+id/line"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/innerLayout"
+            app:layout_constraintBottom_toBottomOf="@id/innerLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="#D1D1D1"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/innerLayout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient1"
-
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="@color/white"
+            app:layout_constraintRight_toLeftOf="@id/line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="10dp">
 
 
             <LinearLayout
@@ -37,12 +49,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/raund_white"
-                android:backgroundTint="#6236C1"
+                android:backgroundTint="@color/Brand"
                 android:padding="5dp"
-                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.50">
+                app:layout_constraintWidth_percent="0.20">
 
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -50,33 +63,35 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:clipToOutline="true"
-                    android:src="@drawable/member"
-                    app:shapeAppearance="@style/circleImageView" />
+                    android:src="@drawable/image_user"
+                    app:shapeAppearance="@style/circleImageView"
+                    tools:src="@drawable/image_user" />
 
 
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textCount"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/radius_white_25"
-                android:backgroundTint="#6236C1"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="-5dp"
+                android:background="@drawable/raund_bordered_num"
                 android:fontFamily="@font/yekanbakh_fanum_regular"
                 android:gravity="center"
-                android:paddingHorizontal="10dp"
+                android:padding="3dp"
                 android:text="@{Integer.toString(member.rank)}"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@id/image_container"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_container" />
+                app:layout_constraintDimensionRatio="W,1:1"
+                app:layout_constraintLeft_toLeftOf="@id/image_container"
+                tools:text="5" />
 
 
             <TextView
                 android:id="@+id/textName"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/yekanbakh_fanum_regular"
@@ -85,9 +100,21 @@
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textCount" />
+                tools:text="sssss"
+                app:layout_constraintRight_toLeftOf="@id/image_container"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginRight="10dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/verify"
+                app:layout_constraintBottom_toBottomOf="@id/image_container"
+                app:layout_constraintRight_toLeftOf="@id/textName"
+                app:layout_constraintTop_toTopOf="@id/image_container" />
+
 
 
             <TextView
@@ -96,20 +123,17 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/raund_white"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/fa_solid_900"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="&#xf06e;"
-                android:textColor="#6236C1"
-                android:textSize="16sp"
+                android:text="&#xf142;"
+                android:textColor="@color/gray_text"
+                android:textSize="22sp"
+                android:layout_marginLeft="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="H,1:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textName"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
